@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXUS SOCIAL — app.js
+   FRIENDIABD SOCIAL — app.js
    Core application layer:
      • Storage abstraction (localStorage helpers)
      • Demo data seeding

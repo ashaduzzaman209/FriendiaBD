@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXUS SOCIAL — notifications.js
+   FRIENDIABD SOCIAL — notifications.js
    Notification dropdown rendering, read/unread state, badge.
    ============================================================ */
 

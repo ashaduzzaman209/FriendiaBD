@@ -22,7 +22,7 @@
    ============================================================ */
 
 const Storage = (() => {
-  const NS = 'nexus_';
+  const NS = 'friendiabd_';
 
   function key(k) { return NS + k; }
 

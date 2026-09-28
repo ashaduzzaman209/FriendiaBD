@@ -1,4 +1,4 @@
-/* ============================================================
+ল/* ============================================================
    NEXUS SOCIAL — settings.js
    Settings page: account, privacy, notifications, appearance,
    security, danger zone.

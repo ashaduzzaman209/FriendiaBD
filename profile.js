@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXUS SOCIAL — profile.js
+   FRIENDIABD  SOCIAL — profile.js
    Profile page rendering, editing, avatar/cover uploads,
    friend/follow actions.
    ============================================================ */

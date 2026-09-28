@@ -7,7 +7,7 @@
 'use strict';
 
 const Profile = (() => {
-  const { DB, Toast, Modal, Time, avatarHTML, escapeHtml, uid, ImageUpload } = window.NexusApp;
+  const { DB, Toast, Modal, Time, avatarHTML, escapeHtml, uid, ImageUpload } = window.FRIENDIABDApp;
 
   let activeTab = 'posts';
   let viewingUserId = null;

@@ -1871,7 +1871,7 @@ const Stories = (() => {
    21. EXPORTS (global namespace)
    ============================================================ */
 
-window.NexusApp = {
+window.FRIENDIABDApp = {
   Storage, DB, Toast, Modal, Time, Theme, AuthGuard,
   avatarHTML, avatarWithStatus, escapeHtml, uid, el, $, $$,
   ImageUpload, DemoData, TopNav, LeftSidebar, RightSidebar, MobileNav,

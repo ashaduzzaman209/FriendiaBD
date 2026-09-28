@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXUS SOCIAL — auth.js
+   FRIENDIABD SOCIAL — auth.js
    Frontend-only authentication (localStorage).
    ------------------------------------------------------------
    ⚠️  SECURITY NOTE
@@ -16,7 +16,7 @@
 'use strict';
 
 const Auth = (() => {
-  const { DB, Storage, Toast, Theme } = window.NexusApp;
+  const { DB, Storage, Toast, Theme } = window.FriendiaBDApp;
 
   /* ---------- Validation helpers ---------- */
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — Nexus</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <header class="topnav" id="topnav"></header>
+
+  <div class="settings-layout">
+    <aside class="sidebar settings-nav" id="settingsNav" aria-label="Settings sections"></aside>
+    <main id="settingsMain" aria-label="Settings"></main>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"></nav>
+
+  <div id="modalRoot"></div>
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/posts.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/settings.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      App.bootSettingsPage();
+    });
+  </script>
+</body>
+</html>

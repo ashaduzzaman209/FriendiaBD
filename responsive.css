@@ -1,0 +1,158 @@
+/* ============================================================
+   NEXUS SOCIAL — Responsive Stylesheet
+   Tablet: 2-column, Mobile: single column
+   ============================================================ */
+
+/* ----- Large desktop tweak ----- */
+@media (max-width: 1400px) {
+  .app-layout {
+    grid-template-columns: minmax(200px, 260px) minmax(0, 1fr) minmax(220px, 300px);
+  }
+}
+
+/* ----- Small desktop / large tablet ----- */
+@media (max-width: 1180px) {
+  .app-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+  .app-layout .right-sidebar { display: none; }
+  .messenger { grid-template-columns: 300px 1fr; }
+}
+
+/* ----- Tablet ----- */
+@media (max-width: 900px) {
+  .topnav {
+    grid-template-columns: auto 1fr auto;
+    padding: 0 var(--sp-4);
+  }
+  .nav-search { max-width: none; }
+  .brand-logo span.brand-text { display: none; }
+
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-hero { display: none; }
+  .auth-form-wrap { padding: var(--sp-5); }
+
+  .profile-cover { height: 220px; }
+  .profile-avatar-big { width: 120px; height: 120px; }
+  .profile-header-card { padding: 0 var(--sp-4) var(--sp-5); margin-top: -55px; }
+  .profile-top-row { flex-direction: column; align-items: flex-start; gap: var(--sp-3); margin-top: -60px; }
+  .profile-info-main { padding-bottom: 0; width: 100%; }
+  .profile-name { font-size: var(--fs-xl); }
+
+  .settings-layout { grid-template-columns: 1fr; }
+  .settings-nav { position: static; max-height: none; display: flex; overflow-x: auto; }
+  .settings-nav .sidebar-nav { flex-direction: row; }
+  .settings-nav .sidebar-item { flex-direction: column; font-size: var(--fs-sm); padding: var(--sp-2) var(--sp-3); text-align: center; }
+  .settings-nav .sidebar-item .icon-box { width: 32px; height: 32px; }
+
+  .messenger { grid-template-columns: 1fr; }
+  .messenger .messenger-list { display: none; }
+  .messenger.chat-open .messenger-list { display: flex; }
+  .messenger.chat-open .chat-area { display: none; }
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 640px) {
+  :root { --nav-height: 56px; }
+
+  .app-layout {
+    grid-template-columns: 1fr;
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+    padding-bottom: 80px;
+  }
+  .app-layout .left-sidebar { display: none; }
+  .app-layout .right-sidebar { display: none; }
+
+  .topnav { padding: 0 var(--sp-3); gap: var(--sp-2); }
+  .nav-brand .brand-mark { width: 32px; height: 32px; font-size: 16px; }
+  .nav-search { display: none; }
+  .nav-icon-btn { width: 38px; height: 38px; background: transparent; }
+  .nav-icon-btn:hover { background: var(--bg-hover); }
+  .nav-avatar-btn { width: 38px; height: 38px; }
+
+  /* Mobile nav visible */
+  .mobile-nav { display: flex; }
+
+  /* Feed */
+  .feed-column { gap: var(--sp-3); }
+  .card { border-radius: var(--r-md); }
+  .composer { padding: var(--sp-3) var(--sp-4); }
+  .composer-actions { justify-content: flex-start; gap: var(--sp-1); overflow-x: auto; }
+  .composer-action { flex: 0 0 auto; padding: var(--sp-2) var(--sp-3); font-size: var(--fs-sm); }
+
+  .story-card { width: 100px; height: 170px; }
+
+  .post-header { padding: var(--sp-3) var(--sp-4) var(--sp-2); }
+  .post-body { padding: 0 var(--sp-4) var(--sp-3); }
+  .post-actions { padding: var(--sp-1) var(--sp-1); margin: 0 var(--sp-2) var(--sp-2); }
+  .post-action { padding: var(--sp-2); font-size: var(--fs-sm); }
+  .post-stats { padding: var(--sp-2) var(--sp-4); font-size: var(--fs-xs); }
+  .comments-section { padding: 0 var(--sp-4) var(--sp-3); padding-top: var(--sp-3); }
+
+  /* Modals */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal {
+    max-width: none;
+    max-height: 92vh;
+    border-radius: var(--r-xl) var(--r-xl) 0 0;
+    animation: slideUpModal var(--t-base);
+  }
+  .modal-body { padding: var(--sp-4); }
+  .modal-header, .modal-footer { padding: var(--sp-3) var(--sp-4); }
+
+  .form-row { grid-template-columns: 1fr; }
+  .gender-group { flex-direction: column; }
+
+  /* Toast */
+  .toast-container {
+    top: auto;
+    bottom: 80px;
+    left: var(--sp-3);
+    right: var(--sp-3);
+    align-items: stretch;
+  }
+  .toast { min-width: 0; max-width: none; }
+
+  /* Profile */
+  .profile-cover { height: 180px; border-radius: 0; margin: calc(-1 * var(--sp-3)); margin-bottom: 0; }
+  .profile-header-card { margin-top: -50px; border-radius: var(--r-lg); }
+  .profile-avatar-big { width: 100px; height: 100px; }
+  .profile-stats { gap: var(--sp-4); justify-content: space-between; }
+  .profile-stat { flex: 1; }
+  .profile-tabs { margin-top: var(--sp-4); }
+  .profile-tab { padding: var(--sp-2) var(--sp-3); font-size: var(--fs-sm); }
+  .profile-actions { width: 100%; }
+  .profile-actions .btn { flex: 1; }
+
+  .friends-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .photo-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+
+  /* Auth */
+  .auth-form h2 { font-size: var(--fs-xl); }
+
+  /* Settings */
+  .settings-layout { padding: var(--sp-3); }
+  .settings-nav { margin: calc(-1 * var(--sp-3)); margin-bottom: var(--sp-3); padding: var(--sp-2) var(--sp-3); }
+  .settings-nav .sidebar-item { padding: var(--sp-2); font-size: var(--fs-xs); min-width: 70px; }
+  .settings-nav .sidebar-item .icon-box { width: 28px; height: 28px; }
+
+  /* Messenger */
+  .messenger { height: calc(100vh - var(--nav-height) - 60px); }
+
+  /* Story viewer */
+  .story-viewer-inner { max-width: none; max-height: none; border-radius: 0; }
+}
+
+@keyframes slideUpModal {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -7,7 +7,7 @@
 'use strict';
 
 const Posts = (() => {
-  const { DB, Toast, Modal, Time, avatarHTML, escapeHtml, uid, ImageUpload } = window.NexusApp;
+  const { DB, Toast, Modal, Time, avatarHTML, escapeHtml, uid, ImageUpload } = window.FriendiabdApp;
 
   /* ---------- Feed rendering ---------- */
 

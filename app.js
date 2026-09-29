@@ -930,7 +930,7 @@ const TopNav = (() => {
           </button>
         </div>
         <div class="modal-body">
-          <p style="color:var(--text-secondary); line-height:1.6; margin-top:0;">Nexus is a frontend demo platform. If you have questions or feedback about how it works, this is the place.</p>
+          <p style="color:var(--text-secondary); line-height:1.6; margin-top:0;">Friendiabd is a frontend demo platform. If you have questions or feedback about how it works, this is the place.</p>
           <ul style="color:var(--text-secondary); line-height:1.9; padding-left:20px; margin:0;">
             <li>All data is stored locally in your browser.</li>
             <li>Nothing is sent to any server.</li>

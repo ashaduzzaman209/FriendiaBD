@@ -1098,7 +1098,7 @@ const RightSidebar = (() => {
             <div style="width:80px; height:60px; border-radius:10px; background:var(--brand-gradient); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800;">AD</div>
             <div>
               <div class="name">Build modern web apps</div>
-              <div class="sub">learnwithnexus.io</div>
+              <div class="sub">learnwithfriendiabd.io</div>
             </div>
           </div>
           <div class="friend-row" style="cursor:pointer;">

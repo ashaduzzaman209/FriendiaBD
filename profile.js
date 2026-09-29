@@ -1,5 +1,5 @@
 /* ============================================================
-   FRIENDIABD  SOCIAL — profile.js
+   NEXUS SOCIAL — profile.js
    Profile page rendering, editing, avatar/cover uploads,
    friend/follow actions.
    ============================================================ */
@@ -7,7 +7,7 @@
 'use strict';
 
 const Profile = (() => {
-  const { DB, Toast, Modal, Time, avatarHTML, escapeHtml, uid, ImageUpload } = window.FRIENDIABDApp;
+  const { DB, Toast, Modal, Time, avatarHTML, escapeHtml, uid, ImageUpload } = window.NexusApp;
 
   let activeTab = 'posts';
   let viewingUserId = null;

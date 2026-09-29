@@ -197,7 +197,7 @@ const Auth = (() => {
 
   function initSignupPage() {
     if (AuthGuard.redirectIfLoggedIn()) return;
-    window.NexusApp.DemoData.seed();
+    window.FriendiabdApp.DemoData.seed();
     Theme.init();
 
     const form = document.getElementById('signupForm');

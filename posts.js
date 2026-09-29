@@ -761,4 +761,4 @@ const Posts = (() => {
   };
 })();
 
-window.FriendiabdApp.Post  = Posts;
+window.FriendiabdApp.Posts = Posts;

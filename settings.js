@@ -389,7 +389,7 @@ const Settings = (() => {
       Modal.close();
       Toast.success('Username updated.');
       render();
-      window.NexusApp.TopNav.render();
+      window.FriendiabdApp.TopNav.render();
     });
   }
 

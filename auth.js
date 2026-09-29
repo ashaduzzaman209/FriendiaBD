@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXUS SOCIAL — auth.js
+   FRIENDIABD SOCIAL — auth.js
    Frontend-only authentication (localStorage).
    ------------------------------------------------------------
    ⚠️  SECURITY NOTE

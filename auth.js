@@ -125,7 +125,7 @@ const Auth = (() => {
   /* ---------- Demo login ---------- */
   function demoLogin() {
     // Ensure demo data exists
-    window.Friendiabd.DemoData.seed();
+    window.FriendiabdApp.DemoData.seed();
     const demo = DB.getUsers().find((u) => u.isDemo);
     if (!demo) {
       Toast.error('Demo data could not be loaded.');

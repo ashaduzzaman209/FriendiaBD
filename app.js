@@ -1877,3 +1877,5 @@ window.FriendiabdApp = {
   ImageUpload, DemoData, TopNav, LeftSidebar, RightSidebar, MobileNav,
   Search, Stories, openMessenger, App,
 };
+
+// Later files (posts.js, profile.js, settings.js, notifications.js) will attach to this object.

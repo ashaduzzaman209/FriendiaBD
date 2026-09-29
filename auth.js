@@ -260,7 +260,7 @@ const Auth = (() => {
         return;
       }
 
-      Toast.success('Account created! Welcome to Nexus.');
+      Toast.success('Account created! Welcome to Friendiabd.');
       setTimeout(() => window.location.replace('index.html'), 700);
     });
   }

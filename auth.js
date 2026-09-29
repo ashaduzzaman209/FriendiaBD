@@ -16,7 +16,7 @@
 'use strict';
 
 const Auth = (() => {
-  const { DB, Storage, Toast, Theme } = window.NexusApp;
+  const { DB, Storage, Toast, Theme } = window.FriendiabdApp;
 
   /* ---------- Validation helpers ---------- */
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

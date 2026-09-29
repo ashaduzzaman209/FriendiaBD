@@ -1,4 +1,3 @@
-
 /* ============================================================
    FRIENDIABD SOCIAL — posts.js
    Post rendering, composer, likes, comments, share, save,

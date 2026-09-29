@@ -1,24 +1,15 @@
 /* ============================================================
-   FRIENDIABD SOCIAL — auth.js
-   Frontend-only authentication (localStorage).
-   ------------------------------------------------------------
-   ⚠️  SECURITY NOTE
-   This module is a DEMO. Passwords are stored as-is in
-   localStorage, which is NOT secure and must NEVER be used in
-   a real product. To connect a real backend:
-     • Replace Auth.signup()  with POST /api/auth/register
-     • Replace Auth.login()   with POST /api/auth/login
-     • Replace Auth.logout()  with POST /api/auth/logout
-     • Store the returned session token (httpOnly cookie preferred)
-     • Verify the session on every page load via GET /api/auth/me
+   FRIENDIABD — auth.js
+   Frontend-only authentication using localStorage.
+   ⚠️  DEMO ONLY — passwords are stored in plaintext.
+   Replace Auth.signup/login/logout with real API calls later.
    ============================================================ */
 
 'use strict';
 
 const Auth = (() => {
-  const { DB, Storage, Toast, Theme } = window.FriendiabdApp;
+  const { DB, Storage, Toast, Theme, AuthGuard, DemoData } = window.FriendiabdApp;
 
-  /* ---------- Validation helpers ---------- */
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const USERNAME_RE = /^[a-zA-Z0-9_]{3,20}$/;
   const MIN_PASSWORD = 8;
@@ -38,12 +29,11 @@ const Auth = (() => {
 
   /* ---------- Signup ---------- */
   async function signup({ fullName, username, email, password, dob, gender }) {
-    // Validate
     if (!fullName || fullName.trim().length < 2) {
       return { ok: false, field: 'signupNameError', msg: 'Please enter your full name.' };
     }
     if (!USERNAME_RE.test(username)) {
-      return { ok: false, field: 'signupUsernameError', msg: 'Username must be 3–20 characters (letters, numbers, underscore).' };
+      return { ok: false, field: 'signupUsernameError', msg: 'Username must be 3–20 characters.' };
     }
     if (DB.getUserByUsername(username)) {
       return { ok: false, field: 'signupUsernameError', msg: 'That username is already taken.' };
@@ -61,13 +51,11 @@ const Auth = (() => {
       return { ok: false, field: 'signupDobError', msg: 'Please enter your date of birth.' };
     }
 
-    // NOTE: In a real app, this is where you'd POST to /api/auth/register.
     const user = {
       id: uid('user'),
       fullName: fullName.trim(),
       username: username.trim(),
       email: email.trim().toLowerCase(),
-      // ⚠️ NEVER store plaintext passwords in production.
       password,
       dob,
       gender,
@@ -81,17 +69,13 @@ const Auth = (() => {
     };
 
     DB.saveUser(user);
-
-    // Add a welcome notification
     DB.addNotification({
       type: 'welcome',
       actorId: null,
       createdAt: Date.now(),
       read: false,
-      text: 'Welcome to Nexus! Complete your profile to get started.',
+      text: 'Welcome to Friendiabd! Complete your profile to get started.',
     });
-
-    // Auto-login
     DB.setCurrentUser(user.id);
     return { ok: true, user };
   }
@@ -104,13 +88,10 @@ const Auth = (() => {
     if (!password) {
       return { ok: false, field: 'loginPasswordError', msg: 'Please enter your password.' };
     }
-
-    // NOTE: In a real app, this is where you'd POST to /api/auth/login.
     const user = DB.getUserByEmail(email);
     if (!user || user.password !== password) {
       return { ok: false, field: 'loginPasswordError', msg: 'Incorrect email or password.' };
     }
-
     DB.setCurrentUser(user.id);
     return { ok: true, user };
   }
@@ -124,8 +105,7 @@ const Auth = (() => {
 
   /* ---------- Demo login ---------- */
   function demoLogin() {
-    // Ensure demo data exists
-    window.FriendiabdApp.DemoData.seed();
+    DemoData.seed();
     const demo = DB.getUsers().find((u) => u.isDemo);
     if (!demo) {
       Toast.error('Demo data could not be loaded.');
@@ -136,20 +116,16 @@ const Auth = (() => {
     setTimeout(() => window.location.replace('index.html'), 500);
   }
 
-  /* ---------- Page initializers ---------- */
+  /* ---------- Login page init ---------- */
   function initLoginPage() {
-    // Redirect if already logged in
     if (AuthGuard.redirectIfLoggedIn()) return;
-
-    // Seed demo data so the "Try demo" button works
-    window.FriendiabdApp.DemoData.seed();
+    DemoData.seed();
     Theme.init();
 
     const form = document.getElementById('loginForm');
     const passInput = document.getElementById('loginPassword');
     const toggle = document.getElementById('toggleLoginPass');
 
-    // Password visibility toggle
     toggle.addEventListener('click', () => {
       const isPassword = passInput.type === 'password';
       passInput.type = isPassword ? 'text' : 'password';
@@ -169,7 +145,6 @@ const Auth = (() => {
 
       const email = document.getElementById('loginEmail').value.trim();
       const password = passInput.value;
-      const remember = document.getElementById('rememberMe').checked;
 
       const result = await login({ email, password });
 
@@ -182,12 +157,6 @@ const Auth = (() => {
         return;
       }
 
-      // "Remember me" simply controls whether the session survives
-      // browser restart. In this demo the session is always persisted.
-      if (!remember) {
-        // (Demo: we still persist for simplicity)
-      }
-
       Toast.success(`Welcome back, ${result.user.fullName.split(' ')[0]}!`);
       setTimeout(() => window.location.replace('index.html'), 500);
     });
@@ -195,9 +164,10 @@ const Auth = (() => {
     document.getElementById('demoLoginBtn').addEventListener('click', demoLogin);
   }
 
+  /* ---------- Signup page init ---------- */
   function initSignupPage() {
     if (AuthGuard.redirectIfLoggedIn()) return;
-    window.FriendiabdApp.DemoData.seed();
+    DemoData.seed();
     Theme.init();
 
     const form = document.getElementById('signupForm');
@@ -213,7 +183,6 @@ const Auth = (() => {
         : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
     });
 
-    // Gender selector
     document.querySelectorAll('.gender-option').forEach((opt) => {
       opt.addEventListener('click', () => {
         document.querySelectorAll('.gender-option').forEach((o) => o.classList.remove('selected'));
@@ -268,4 +237,4 @@ const Auth = (() => {
   return { signup, login, logout, demoLogin, initLoginPage, initSignupPage };
 })();
 
-window.Auth = Auth;
+window.FriendiabdApp.Auth = Auth;

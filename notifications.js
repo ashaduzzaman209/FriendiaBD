@@ -6,7 +6,7 @@
 'use strict';
 
 const Notifications = (() => {
-  const { DB, Toast, Time, avatarHTML, escapeHtml } = window.NexusApp;
+  const { DB, Toast, Time, avatarHTML, escapeHtml } = window.FriendiabdApp;
 
   /* ---------- Boot ---------- */
   function init() {

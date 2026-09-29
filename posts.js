@@ -1,5 +1,6 @@
+
 /* ============================================================
-   NEXUS SOCIAL — posts.js
+   FRIENDIABD SOCIAL — posts.js
    Post rendering, composer, likes, comments, share, save,
    three-dot menu, story-level filtering.
    ============================================================ */

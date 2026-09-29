@@ -831,7 +831,7 @@ const TopNav = (() => {
 
       <div class="nav-search" role="search">
         <span class="search-icon">${ICONS.search}</span>
-        <input type="search" id="globalSearch" placeholder="Search Nexus" aria-label="Search Nexus" autocomplete="off" />
+        <input type="search" id="globalSearch" placeholder="Search Nexus" aria-label="Search Friendiabd" autocomplete="off" />
         <div id="searchResults" class="search-results hidden"></div>
       </div>
 

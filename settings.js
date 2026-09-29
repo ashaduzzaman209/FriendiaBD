@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXUS SOCIAL — settings.js
+   FRIENDIABD SOCIAL — settings.js
    Settings page: account, privacy, notifications, appearance,
    security, danger zone.
    ============================================================ */

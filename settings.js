@@ -476,4 +476,4 @@ const Settings = (() => {
   return { render };
 })();
 
-window.Settings = Settings;
+window.FriendiabdApp.Settings = Settings;

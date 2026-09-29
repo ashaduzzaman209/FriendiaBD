@@ -414,7 +414,7 @@ const Profile = (() => {
 
     // Message
     document.getElementById('messageBtn')?.addEventListener('click', () => {
-      window.NexusApp.openMessenger(user.id);
+      window.FriendiabdApp.openMessenger(user.id);
     });
 
     // Follow
@@ -524,7 +524,7 @@ const Profile = (() => {
       Modal.close();
       Toast.success('Profile updated.');
       render(document.getElementById('profileMain'));
-      window.NexusApp.TopNav.render();
+      window.FriendiabdApp.TopNav.render();
     });
   }
 
@@ -599,7 +599,7 @@ const Profile = (() => {
       Modal.close();
       Toast.success('Profile picture updated.');
       render(document.getElementById('profileMain'));
-      window.NexusApp.TopNav.render();
+      window.FriendiabdApp.TopNav.render();
     });
   }
 

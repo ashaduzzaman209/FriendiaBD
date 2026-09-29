@@ -823,9 +823,9 @@ const TopNav = (() => {
 
     header.innerHTML = `
       <div class="nav-brand">
-        <a href="index.html" class="brand-logo" aria-label="Nexus home">
-          <span class="brand-mark">N</span>
-          <span class="brand-text">Nexus</span>
+        <a href="index.html" class="brand-logo" aria-label="Friendiabd home">
+          <span class="brand-mark">F</span>
+          <span class="brand-text">Friendiabd</span>
         </a>
       </div>
 

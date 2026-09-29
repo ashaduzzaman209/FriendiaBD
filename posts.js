@@ -636,7 +636,7 @@ const Posts = (() => {
         <input type="file" accept="image/jpeg,image/png,image/webp" id="composerFile" class="hidden" />
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-modal-close>Cancel</button>
+   <button class="btn btn-secondary" data-modal-close>Cancel</button>
         <button class="btn btn-primary" id="publishBtn" disabled>Post</button>
       </div>
     `, { size: 'modal-sm', label: 'Create post' });
@@ -761,4 +761,4 @@ const Posts = (() => {
   };
 })();
 
-window.Posts = Posts;
+window.FriendiabdApp.Post  = Posts;

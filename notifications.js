@@ -1,12 +1,12 @@
 /* ============================================================
-   FRIENDIABD SOCIAL — notifications.js
+   NEXUS SOCIAL — notifications.js
    Notification dropdown rendering, read/unread state, badge.
    ============================================================ */
 
 'use strict';
 
 const Notifications = (() => {
-  const { DB, Toast, Time, avatarHTML, escapeHtml } = window.FRIENDIABDApp;
+  const { DB, Toast, Time, avatarHTML, escapeHtml } = window.NexusApp;
 
   /* ---------- Boot ---------- */
   function init() {

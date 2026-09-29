@@ -125,7 +125,7 @@ const Auth = (() => {
   /* ---------- Demo login ---------- */
   function demoLogin() {
     // Ensure demo data exists
-    window.NexusApp.DemoData.seed();
+    window.Friendiabd.DemoData.seed();
     const demo = DB.getUsers().find((u) => u.isDemo);
     if (!demo) {
       Toast.error('Demo data could not be loaded.');
@@ -142,7 +142,7 @@ const Auth = (() => {
     if (AuthGuard.redirectIfLoggedIn()) return;
 
     // Seed demo data so the "Try demo" button works
-    window.NexusApp.DemoData.seed();
+    window.FriendiabdApp.DemoData.seed();
     Theme.init();
 
     const form = document.getElementById('loginForm');

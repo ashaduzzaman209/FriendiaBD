@@ -1,5 +1,5 @@
 /* ============================================================
-   FRIENDIABD SOCIAL — app.js
+   NEXUS SOCIAL — app.js
    Core application layer:
      • Storage abstraction (localStorage helpers)
      • Demo data seeding
@@ -1871,7 +1871,7 @@ const Stories = (() => {
    21. EXPORTS (global namespace)
    ============================================================ */
 
-window.FRIENDIABDApp = {
+window.NexusApp = {
   Storage, DB, Toast, Modal, Time, Theme, AuthGuard,
   avatarHTML, avatarWithStatus, escapeHtml, uid, el, $, $$,
   ImageUpload, DemoData, TopNav, LeftSidebar, RightSidebar, MobileNav,
